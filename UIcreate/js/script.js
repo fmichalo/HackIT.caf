@@ -39,7 +39,7 @@ function jsonToList(){
 
 
 $(function () {
-    $("#content").sortable({
+    $(".sortable").sortable({
         tolerance: 'pointer',
         revert: 'invalid',
         placeholder: 'span7 well placeholder tile',
