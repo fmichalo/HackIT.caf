@@ -1,1 +1,4 @@
-.editable{ background:#EAEAEA}
+.editable{ 
+	background:#EAEAEA;
+	border:1px solid black;
+}

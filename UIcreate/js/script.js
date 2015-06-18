@@ -3,7 +3,7 @@ function importModule(moduleName){
 
 	$.ajax({
 		'url':'../modules/'+ moduleName +'/'+moduleName +'.html',
-		'success':function(data){$('#content').append(data)}
+		'success':function(data){$('#content').append('</div>').append('<div><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>'+data+'</div>')}
 	});
 
 }
