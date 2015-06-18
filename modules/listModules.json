@@ -1,0 +1,10 @@
+{
+	"modules": [
+		{
+			"name": "textContent"
+		}
+		{
+			"name": "subscribe"
+		}
+	]
+}
