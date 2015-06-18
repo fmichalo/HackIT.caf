@@ -3,7 +3,7 @@ function importModule(moduleName){
 
 	$.ajax({
 		'url':'../modules/'+ moduleName +'/'+moduleName +'.html',
-		'success':function(data){$('#content').append('</div>').append('<div><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>'+data+'</div>')}
+		'success':function(data){$('#content').append('<div><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>'+data+'</div>')}
 	});
 
 }
@@ -24,6 +24,7 @@ function jsonToList(jsonname){
 
 }
 
-$("#sortable").sortable({
-    cancel: ".module"
+$("#content").sortable({
+    //cancel: ".module",
+    handle:".ui-icon-arrowthick-2-n-s"
 });
