@@ -23,3 +23,7 @@ function jsonToList(jsonname){
 	});
 
 }
+
+$("#sortable").sortable({
+    cancel: ".module"
+});
