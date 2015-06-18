@@ -1,10 +1,4 @@
 {
-	"modules": [
-		{
-			"name": "textContent"
-		}
-		{
-			"name": "subscribe"
-		}
-	]
+	"1": "textContent",
+	"2": "subscribe"
 }
