@@ -1,16 +1,15 @@
-#content div span.ui-icon-arrowthick-2-n-s { 
-	position: absolute; 
-	margin-left: -1.3em; 
-	cursor:move;
+.placeholder {
+    border: 1px solid green;
+    background-color: white;
+    -webkit-box-shadow: 0px 0px 10px #888;
+    -moz-box-shadow: 0px 0px 10px #888;
+    box-shadow: 0px 0px 10px #888;
+}
+.tile {
+    height: auto;
+   
+}
+.grid {
+    margin-top: 1em;
 }
 
-#content > div { 
-	margin: 0 3px 3px 3px; 
-	padding: 0.4em; 
-	padding-left: 1.5em;   
-}
-#content div span { 
-	position: absolute; 
-	margin-left: -1.3em; 
-	cursor:move;
-}

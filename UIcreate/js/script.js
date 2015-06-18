@@ -7,7 +7,7 @@ function importModule(moduleName){
 	});
 
 }
-
+/*
 function jsonToList(jsonname){
 
 	$.getJSON( "../modules/listModules.json", function( data ) {
@@ -23,8 +23,14 @@ function jsonToList(jsonname){
 	});
 
 }
-
-$("#content").sortable({
-    //cancel: ".module",
-    handle:".ui-icon-arrowthick-2-n-s"
+*/
+$(function () {
+    $(".grid").sortable({
+        tolerance: 'pointer',
+        revert: 'invalid',
+        placeholder: 'span2 well placeholder tile',
+        forceHelperSize: true,
+        cancel: "p"
+    });
 });
+
