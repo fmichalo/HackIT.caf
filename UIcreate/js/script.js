@@ -3,11 +3,11 @@ function importModule(moduleName){
 
 	$.ajax({
 		'url':'../modules/'+ moduleName +'/'+moduleName +'.html',
-		'success':function(data){$('#content').append('</div>').append('<div><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>'+data+'</div>')}
+		'success':function(data){$('#content').append('<div><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>'+data+'</div>')}
 	});
 
 }
-
+/*
 function jsonToList(jsonname){
 
 	$.getJSON( "../modules/listModules.json", function( data ) {
@@ -23,7 +23,13 @@ function jsonToList(jsonname){
 	});
 
 }
-
-$("#sortable").sortable({
-    cancel: ".module"
+*/
+$(function () {
+    $(".grid").sortable({
+        tolerance: 'pointer',
+        revert: 'invalid',
+        placeholder: 'span2 well placeholder tile',
+        forceHelperSize: true,
+        cancel: "p"
+    });
 });
