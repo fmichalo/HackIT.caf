@@ -7,18 +7,34 @@ import (
     "encoding/json"
 )
 
-type test_struct struct {
-    Test string
+type Module struct {
+	Name string `json:"name"`
+	Size int 	`json:"size"`
+	Data interface{} `json:"data"`
+}
+
+type listModules struct {
+    List []Module `json:"modules"`
 }
 
 func postModules(rw http.ResponseWriter, req *http.Request) {
+
     decoder := json.NewDecoder(req.Body)
-    var t test_struct   
+    var t listModules   
     err := decoder.Decode(&t)
     if err != nil {
         //panic()
     }
-    log.Println(t.Test)
+    parseList(t.List)
+
+}
+
+func parseList(l []Module) {
+	//log.Println(l)
+
+	for _, mod := range l {
+		log.Println(mod.Name)
+	}
 }
 
 func main() {
