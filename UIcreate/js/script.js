@@ -57,7 +57,7 @@ function addAttendee(json) {
 	$.ajax({
 	type: "POST",
         //the url where you want to sent the userName and password to
-        url: 'addAttendee',
+        url: titleSite+'-web-1/addAttendee',
         dataType: 'json',
         async: false,
         //json object to sent to the authentication url
@@ -68,13 +68,6 @@ function addAttendee(json) {
         }}
     );
 
-	// $.ajax({
-	// 	type : "POST",
-	// 	url : "addAttendee?json=" + json,
-	// 	success : function(response) {
-	// 	$("#subscribe").html("Inscription Done ! ");
-	// }
-	// });
 }
 
 $( document ).ready(function() {
@@ -97,7 +90,7 @@ function sendwebsite(json){
 	$.ajax({
 	type: "POST",
 	    //the url where you want to sent the userName and password to
-	    url: 'addAttendee', ///////////////////////////////////// to define
+	    url: '64.100.62.107:9000/content', ///////////////////////////////////// to define
 	    dataType: 'json',
 	    async: false,
 	    //json object to sent to the authentication url
@@ -127,14 +120,14 @@ function fixhtml(){
 	cbody.find(".toremove").remove();
 	cbody.find(".deleteButton").remove();
 
-	var title = ""
+	titleSite = ""
 	var items = [];
 	$inputs.each(function(){
 		if (this.name != "eventtitle"){
 			items.push("<p>"+this.name+":"+this.value+"</p>");	
 		}
 		else{
-			title=this.value;
+			titleSite=this.value;
 		}
 		
 	});
@@ -153,7 +146,7 @@ function fixhtml(){
 	
 
 	var jsonhtml =JSON.stringify({
-		title: title,
+		title: titleSite,
 		content : cbody.html()
 	});
 	sendwebsite(jsonhtml); 
