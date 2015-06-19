@@ -22,10 +22,35 @@
     <body>
 
         <div id="banner" class="row grid span12">
-                
+                <img id="BannerImg" src="#" alt="Banner" height="auto" width="auto"> 
+                <button id="imgEdit">Edit</button> 
         </div>
         <div id="moduleSelect" class="row grid span4">
-            
+            <h2>Infos:</h2>
+            <form id="infoForm" action="" method="post">
+
+                <table>
+                    <tr>
+                        <td>Event title:</td>
+                        <td><input type="text" name="eventtitle" maxlength="36" size="12"/></td> 
+
+                    </tr>
+                    <tr>
+                        <td>Location:</td>
+                        <td><input type="text" name="location" maxlength="36" size="12"/> </td>
+                    </tr>
+                    <tr>
+                        <td>Date:</td>
+                        <td><input type="date" name="date" /> </td>
+                    </tr>
+                    <tr>
+                        <td>Time:</td>
+                        <td><input type="time" name="time" /> </td>
+                    </tr>
+                    
+                </table>
+            </form>
+            <h2>Modules:</h2>
         </div>      
         <script type="text/javascript">
             jsonToList();

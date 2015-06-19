@@ -1,0 +1,12 @@
+form {
+    line-height: 2em;
+}
+form p {
+    margin: 5px 0;
+}
+#formTitle {
+    margin: 10px 0;
+    font-size: 1.2em;
+    font-weight: bold
+}
+
