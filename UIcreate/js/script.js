@@ -3,7 +3,7 @@ function importModule(moduleName){
 
 	$.ajax({
 		'url':'../modules/'+ moduleName +'/'+moduleName +'.html',
-		'success':function(data){$('#content').append('<div class="well span7 tile">'+data+'<button class="deleteButton">delete</button></div>')
+		'success':function(data){$('#content').append('<div class="well span7 tile">'+data+'</div>')}
 		$( ".deleteButton" ).click(function() {
 			$(this).parent().remove();
 		});
@@ -41,7 +41,6 @@ function jsonToList(){
 
 }
 
-
 $(function () {
     $(".sortable").sortable({
         tolerance: 'pointer',
@@ -51,6 +50,7 @@ $(function () {
         cancel: "p, h2, form, button"
     });
 });
+
 
 function addAttendee(json) {
 
@@ -85,4 +85,53 @@ $( document ).ready(function() {
 	});
 
 });
+
+
+$( document ).ready(function(){
+	$(".convert").click(fixhtml);
+});
+
+
+function sendwebsite(json){
+
+	$.ajax({
+	type: "POST",
+	    //the url where you want to sent the userName and password to
+	    url: 'addAttendee', ///////////////////////////////////// to define
+	    dataType: 'json',
+	    async: false,
+	    //json object to sent to the authentication url
+	    data:  json,
+	    success: function () {
+
+	var cbody = $("body").clone();
+	cbody.children("#content").removeClass("ui-sortable");
+	cbody.children("#content").removeClass("sortable");
+	
+	var items = [];
+	$inputs.each(function(){
+		if (this.name != "title"){
+			items.push("<p>"+this.name+":"+this.value+"</p>");	
+		}
+		
+	});
+
+	cbody.children("#moduleSelect").html("");
+	cbody.children("")
+
+	$( "<div/>", {
+	"class": "infoDiv",
+	html: items.join( "" )
+	}).appendTo( cbody.children("#moduleSelect") );
+
+	
+
+	cbody.find("*[contenteditable=true]").attr("contenteditable", false);
+	
+
+	var jsonhtml ='{"title":"'+title+'", "content":"'+cbody.html()+'"}';
+	sendwebsite(jsonhtml); 
+
+}
+
 
