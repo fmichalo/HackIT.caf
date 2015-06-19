@@ -23,9 +23,10 @@
 
         <div id="banner" class="row grid span12">
                 <img id="BannerImg" src="#" alt="Banner" height="auto" width="auto"> 
-                <button id="imgEdit">Edit</button> 
+                <button class="toremove" id="imgEdit">Edit</button> 
         </div>
         <div id="moduleSelect" class="row grid span4">
+            <button id="convert" class="convert" width="100%">Save the website</button>
             <h2>Infos:</h2>
             <form id="infoForm" action="" method="post">
 
@@ -51,13 +52,15 @@
                 </table>
             </form>
             <h2>Modules:</h2>
-        </div>      
-        <script type="text/javascript">
-            jsonToList();
-        </script>
+        </div>
+        <div class="toremove">      
+            <script  type="text/javascript">
+                jsonToList();
+            </script>
+        </div>
 
         <div id="content" class="sortable row grid span8"></div>
-        <button id="convert" class="convert">submit</button>
+        
 
 
     </body>
