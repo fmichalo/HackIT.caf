@@ -152,7 +152,10 @@ function fixhtml(){
 	cbody.find("*[contenteditable=true]").attr("contenteditable", false);
 	
 
-	var jsonhtml ='{"title":"'+title+'", "content":"'+cbody.html()+'"}';
+	var jsonhtml =JSON.stringify({
+		title: title,
+		content : cbody.html()
+	});
 	sendwebsite(jsonhtml); 
 
 }
