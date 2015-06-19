@@ -78,8 +78,8 @@ function addAttendee(json) {
 }
 
 $( document ).ready(function() {
-	$( "#imgEdit" ).click(function() {
-		var newURL= prompt('New banner url','http://url.com/image.png');
+	$( "#BannerImg" ).click(function() {
+		var newURL= prompt('New banner url','https://www.zitcom.dk/images/press/cisco-header@2x.jpg');
 		console.log(newURL);
 		$("#BannerImg").attr("src",newURL);
 	});
