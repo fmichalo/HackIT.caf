@@ -3,7 +3,7 @@ function importModule(moduleName){
 
 	$.ajax({
 		'url':'../modules/'+ moduleName +'/'+moduleName +'.html',
-		'success':function(data){$('#content').append('<div class="well span7 tile">'+data+'</div>')}
+		'success':function(data){$('#content').append('<div class="well span7 tile">'+data+'<button class="deleteButton">delete</button></div>')
 		$( ".deleteButton" ).click(function() {
 			$(this).parent().remove();
 		});
@@ -104,14 +104,37 @@ function sendwebsite(json){
 	    data:  json,
 	    success: function () {
 
+	    alert("website exported!"); 
+	    }}
+	);
+
+}
+
+function fixhtml(){
+	/*$("div").removeClass("sortable");
+	var body = $("body").html();
+	node = $(body).clone();
+	node.removeClass("ui-sortable");
+	console.log(node);
+	//node.getElementById("moduleSelect").remove()
+	*/
+
+	var $inputs = $("#infoForm :input");
+
 	var cbody = $("body").clone();
 	cbody.children("#content").removeClass("ui-sortable");
 	cbody.children("#content").removeClass("sortable");
-	
+	cbody.find(".toremove").remove();
+	cbody.find(".deleteButton").remove();
+
+	var title = ""
 	var items = [];
 	$inputs.each(function(){
-		if (this.name != "title"){
+		if (this.name != "eventtitle"){
 			items.push("<p>"+this.name+":"+this.value+"</p>");	
+		}
+		else{
+			title=this.value;
 		}
 		
 	});
